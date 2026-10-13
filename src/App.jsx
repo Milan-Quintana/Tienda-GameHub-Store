@@ -3,7 +3,7 @@ import Header from './Header';
 import Carrusel from './Carrusel';
 import Catalogo from './Catalogo';
 import DetalleProducto from './DetalleProducto';
-import CarritoCompras from '/.CarritoCompras';
+import CarritoCompras from './CarritoCompras';
 import Checkout from './Checkout';
 import MisOrdenes from './MisOrdenes';
 import Footer from './Footer';

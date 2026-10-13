@@ -1,5 +1,4 @@
 export default function CarritoCompras({ items, alCambiarCantidad, alEliminar }) {
-
   const total = items.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0);
 
   return (
@@ -13,7 +12,7 @@ export default function CarritoCompras({ items, alCambiarCantidad, alEliminar })
         <div className="row g-4">
           <div className="col-lg-8">
             {items.length === 0 ? (
-              <p className="text-muted fd-5">Tu carrito está vacío actualmente.</p>
+              <p className="text-muted fs-5">Tu carrito está vacío actualmente.</p>
             ) : (
               items.map((item) => (
                 <div key={item.id} className="cart-item">
