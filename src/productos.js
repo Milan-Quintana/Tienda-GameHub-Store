@@ -5,7 +5,7 @@ export const productosData = [
         precio: 34990,
         categoria: "Acción",
         plataforma: "PC · PS5",
-        imagen: "public/neon-drift-squad.jpg",
+        imagen: "/neon-drift-squad.jpg",
         badge: "Nuevo"
     },
     {
@@ -14,7 +14,7 @@ export const productosData = [
         precio: 27990,
         categoria: "RPG",
         plataforma: "Xbox · PC",
-        imagen: "public/ashen-vale.jpg",
+        imagen: "/ashen-vale.jpg",
         badge: "-30%"
     },
     {
@@ -23,7 +23,7 @@ export const productosData = [
         precio: 39990,
         categoria: "Deportes",
         plataforma: "PS5",
-        imagen: "public/rincon-kart.jpg",
+        imagen: "/rincon-kart.jpg",
         badge: null
     },
     {
@@ -32,7 +32,7 @@ export const productosData = [
         precio: 18990,
         categoria: "Indie",
         plataforma: "PC · Switch",
-        imagen: "public/hollow-signal.jpg",
+        imagen: "/hollow-signal.jpg",
         badge: "Nuevo"
     }
 ];
