@@ -16,8 +16,12 @@ export default function CarritoCompras({ items, alCambiarCantidad, alEliminar })
             ) : (
               items.map((item) => (
                 <div key={item.id} className="cart-item">
-                  <div className="cart-thumb">
-                    <img src={item.imagen} alt={item.nombre} />
+                  <div className="cart-thumb"  style={{ width: '80px', height: '100px', flexShrink: 0, overflow: 'hidden', borderRadius: '8px'}}>
+                    <img 
+                      src={item.imagen} 
+                      alt={item.nombre} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover'}}
+                    />
                   </div>
                   <div className="cart-info">
                     <h3>{item.nombre}</h3>
