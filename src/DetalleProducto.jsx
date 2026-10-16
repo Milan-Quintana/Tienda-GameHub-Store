@@ -6,7 +6,7 @@ export default function DetalleProducto() {
           <div className="col-lg-6">
             <div className="product-detail-img shadow-lg rounded p-3 bg-dark text-center">
               <img 
-                src="img/neon-drift-squad.jpg" 
+                src="/img/neon-drift-squad.jpg" 
                 alt="Neon Drift Squad Detalle" 
                 className="img-fluid rounded" 
                 style={{maxHeight: '450px', objectFit: 'contain'}}
