@@ -9,7 +9,7 @@ export default function DetalleProducto() {
                 src="/img/neon-drift-squad.jpg" 
                 alt="Neon Drift Squad Detalle" 
                 className="img-fluid rounded" 
-                style={{maxHeight: '450px', objectFit: 'contain'}}
+                style={{ maxHeight: '450px', objectFit: 'contain' }}
               />
             </div>
           </div>
