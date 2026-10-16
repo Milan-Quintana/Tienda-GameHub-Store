@@ -1,4 +1,7 @@
 export default function DetalleProducto() {
+
+  const imagenURL = new URL('/img/neon-drift-squad.jpg', import.meta.url).href;
+
   return (
     <section id="detalleproducto" className="section bg-alt">
       <div className="container">
