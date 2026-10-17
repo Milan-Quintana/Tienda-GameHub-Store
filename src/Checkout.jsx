@@ -1,4 +1,21 @@
-export default function Checkout() {
+export default function Checkout({ carrito = [], alConfirmarPago }) {
+  // Calculamos el Total Dinámico según los Productos en el Carrito
+  const total = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
+
+  // Manejo del envío del formulario
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (carrito.length === 0){
+      alert("Tu Carrito está vacío. Agrega productos antes de Confirmar el Pago.");
+      return;
+    }
+
+    // Ejecuta la función crearOrden de App.jsx
+    alConfirmarPago();
+    alert("¡Pago Confirmado con éxito! Tu Orden ha sido agregado a 'Mis Ordenes'.");
+  };
+
   return (
     <section id="checkout" className="section">
       <div className="container">
@@ -8,7 +25,7 @@ export default function Checkout() {
         </div>
         <div className="row g-4">
           <div className="col-lg-7">
-            <form className="p-4 rounded bg-dark border border-secondary">
+            <form onSubmit={handleSubmit} className="p-4 rounded bg-dark border border-secondary">
               <h4 className="mb-3 text-white">Datos del Cliente</h4>
               <div className="row g-3">
                 <div className="col-md-6">
@@ -30,15 +47,21 @@ export default function Checkout() {
           <div className="col-lg-5">
             <div className="p-4 rounded bg-dark border border-secondary text-white">
               <h4 className="mb-3">Resumen de Orden</h4>
-              <ul className="list-group list-group-flush mb-3 text-dark">
-                <li className="list-group-item d-flex justify-content-between align-items-center">
-                  Neon Drift Squad
-                  <span>$34.990</span>
-                </li>
-              </ul>
+              {carrito.lenght === 0 ? (
+                <p className="text-muted">No hay productos en la Orden.</p>
+              ) : (
+                <ul className="list-group list-group-flush mb-3 text-dark">
+                  {carrito.map((item) => (
+                    <li key={item.id} className="List-group-item d-flex justify-content-between align-items-center">
+                      <span>{item.nombre} (x{item.cantidad})</span>
+                      <span>${(item.precio * item.cantidad).toLocaleString('es-CL')}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
               <div className="d-flex justify-content-between text-white fw-bold fs-5">
                 <span>Total:</span>
-                <span className="text-accent">$34.990</span>
+                <span className="text-accent">${total.toLocaleString('es-CL')}</span>
               </div>
             </div>
           </div>

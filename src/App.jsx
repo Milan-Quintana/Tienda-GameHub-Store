@@ -47,6 +47,29 @@ function App() {
     setCarrito((prev) => prev.filter((item) => item.id != id));
   };
 
+  //Fusión pra procesar la compra y registrar la orden
+  const crearOrden = () => {
+    if (carrito.length === 0) return;
+
+    const totalCalculado = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
+    const hoy = new Date();
+    const fechaFormateada = hoy.toLocaleDateString('es-CL', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric'
+    });
+
+    const nuevaOrden = {
+      id: `#GH-${Math.floor(1000 + Math.random() * 9000)}`,
+      fecha: fechaFormateada,
+      estado: 'Completado',
+      total: totalCalculado
+    };
+
+    setOrdenes((prev) => [nuevaOrden, ...prev]);
+    setCarrito([]); // Vaciamos el Carrito tras confirmar la Compra
+  };
+  
   const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
 
   return (

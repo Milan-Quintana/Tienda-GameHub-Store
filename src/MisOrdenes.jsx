@@ -1,4 +1,4 @@
-export default function MisOrdenes() {
+export default function MisOrdenes({ ordenes = [] }) {
   return (
     <section id="misordenes" className="section bg-alt">
       <div className="container">
@@ -17,18 +17,22 @@ export default function MisOrdenes() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">#GH-1092</th>
-                <td>28/09/2026</td>
-                <td><span className="badge bg-success">Completado</span></td>
-                <td>$34.990</td>
-              </tr>
-              <tr>
-                <th scope="row">#GH-1088</th>
-                <td>15/09/2026</td>
-                <td><span className="badge bg-success">Completado</span></td>
-                <td>$27.990</td>
-              </tr>
+              {ordenes.length === 0 ? (
+                <tr>
+                  <td colSpan="4" className="text-center text-muted py-3">
+                    No tiene órdenes registradas todavía.
+                  </td>
+                </tr>
+              ) : (
+                ordenes.map((ord) => (
+                  <tr key={ord.id}>
+                    <th scope="row">{ord.id}</th>
+                    <td>{ord.fecha}</td>
+                    <td><span className="badge bg-success">{ord.estado}</span></td>
+                    <td>${ord.total.toLocaleString('es-CL')}</td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         </div>
