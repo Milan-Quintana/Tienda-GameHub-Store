@@ -17,6 +17,11 @@ function App() {
     { ...productosData[1], cantidad: 2}
   ]);
 
+  const [ordenes, setOrdenes] = useState([
+    { id: '#GH-1092', fecha: '28/09/2026', estado: 'Completado', total: 34990 },
+    { id: '#GH-1088', fecha: '15/09/2026', estado: 'Completado', total: 27990 }
+  ])
+
   const agregarAlCarrito = (producto) => {
     setCarrito((prev) => {
       const existe = prev.find((item) => item.id === producto.id);
@@ -86,8 +91,8 @@ function App() {
           alCambiarCantidad={cambiarCantidad}
           alEliminar={eliminarDelCarrito}
         />
-        <Checkout />
-        <MisOrdenes />
+        <Checkout carrito={carrito} alConfirmarPago={crearOrden} />
+        <MisOrdenes ordenes={ordenes} />
       </main>
       <Footer />
     </>
