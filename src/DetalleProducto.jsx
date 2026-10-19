@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function DetalleProducto({ alAgregarAlCarrito }) {
 
-  const imagenUrl = "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1000&auto=format&fit=crop";
+  const imagenUrl = "https://cdn.b12.io/client_media/0rfXCmVd/ff16e103-a2b4-11f1-a210-0242ac110002-OPzKCe2W_b96dlL1rmdg1_slrPewfu.jpg";
   
   return (
     <section id="detalleproducto" className="section bg-alt py-5">
