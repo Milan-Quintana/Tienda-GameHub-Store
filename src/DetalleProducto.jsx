@@ -1,9 +1,7 @@
 import React from 'react';
+import neonDriftImg from './neon-drift-squad.jpg';
 
-export default function DetalleProducto({ alAgregarAlCarrito }) {
-
-  const imagenUrl = "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1000&auto=format&fit=crop";
-  
+export default function DetalleProducto({ alAgregarAlCarrito }) { 
   return (
     <section id="detalleproducto" className="section bg-alt py-5">
       <div className="container">
@@ -11,10 +9,10 @@ export default function DetalleProducto({ alAgregarAlCarrito }) {
           <div className="col-lg-6 text-center">
             <div className="product-detail-img shadow-lg rounded p-3 bg-dark">
               <img 
-                src={imagenUrl}
+                src={neonDriftImg}
                 alt="Neon Drift Squad Detalle" 
                 className="img-fluid rounded" 
-                style={{ maxHeight: '400px', objectFit: 'cover', width: '100%' }}
+                style={{ maxHeight: '400px', objectFit: 'contain' }}
               />
             </div>
           </div>
@@ -35,7 +33,7 @@ export default function DetalleProducto({ alAgregarAlCarrito }) {
                     id: 1,
                     nombre: 'Neon Drift Squad',
                     precio: 34990,
-                    imagen: imagenUrl,
+                    imagen: neonDriftImg,
                     plataforma: 'PC · PS5'
                   })}
                 >
