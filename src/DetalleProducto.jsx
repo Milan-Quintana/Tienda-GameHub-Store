@@ -1,7 +1,6 @@
+import neonDriftImg from '../assets/neon-drift-squad.jpg';
+
 export default function DetalleProducto() {
-
-  const imagenURL = new URL('/img/neon-drift-squad.jpg', import.meta.url).href;
-
   return (
     <section id="detalleproducto" className="section bg-alt">
       <div className="container">
@@ -9,7 +8,7 @@ export default function DetalleProducto() {
           <div className="col-lg-6">
             <div className="product-detail-img shadow-lg rounded p-3 bg-dark text-center">
               <img 
-                src="/img/neon-drift-squad.jpg" 
+                src={neonDriftImg}
                 alt="Neon Drift Squad Detalle" 
                 className="img-fluid rounded" 
                 style={{ maxHeight: '450px', objectFit: 'contain' }}
