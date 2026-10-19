@@ -1,4 +1,4 @@
-import neonDriftImg from '../assets/neon-drift-squad.jpg';
+import neonDriftImg from '/neon-drift-squad.jpg';
 
 export default function DetalleProducto() {
   return (
