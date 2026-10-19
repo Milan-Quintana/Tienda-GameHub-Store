@@ -1,12 +1,13 @@
+import React from 'react';
 import neonDriftImg from '/neon-drift-squad.jpg';
 
-export default function DetalleProducto() {
+export default function DetalleProducto({ alAgregarAlCarrito }) {
   return (
-    <section id="detalleproducto" className="section bg-alt">
+    <section id="detalleproducto" className="section bg-alt py-5">
       <div className="container">
         <div className="row g-4 align-items-center">
-          <div className="col-lg-6">
-            <div className="product-detail-img shadow-lg rounded p-3 bg-dark text-center">
+          <div className="col-lg-6 text-center">
+            <div className="product-detail-img shadow-lg rounded p-3 bg-dark">
               <img 
                 src={neonDriftImg}
                 alt="Neon Drift Squad Detalle" 
@@ -25,7 +26,17 @@ export default function DetalleProducto() {
                 Compite en carreras futuristas a toda velocidad por las calles de Neo-Tokio. Personaliza tus vehículos, únete a escuadrones online y domina la liga cyberpunk.
               </p>
               <div className="d-flex gap-3">
-                <button className="btn btn-accent btn-lg" type="button">
+                <button 
+                  className="btn btn-accent btn-lg" 
+                  type="button"
+                  onClick={() => alAgregarAlCarrito && alAgregarAlCarrito({
+                    id: 1,
+                    nombre: 'Neon Drift Squad',
+                    precio: 34990,
+                    imagen: neonDriftImg,
+                    plataforma: 'PC · PS5'
+                  })}
+                >
                   <i className="bi bi-cart-plus me-2"></i> Añadir al carrito
                 </button>
                 <a href="#checkout" className="btn btn-outline-light btn-lg">Comprar ahora</a>
